@@ -1,6 +1,6 @@
 <?php
-require_once('Vendor\Plates\src\Engine.php');
-require_once('Helpers\Psr4AutoloaderClass.php');
+require_once(__DIR__ . '/Vendor/Plates/src/Engine.php');
+require_once(__DIR__ . '/Helpers/Psr4AutoloaderClass.php');
 
 use Controllers\MainController;
 use Helpers\Psr4AutoloaderClass;
