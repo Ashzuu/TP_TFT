@@ -2,11 +2,13 @@
 namespace Config;
 use Exception;
 
-class Config {
+class Config 
+{
     private static $param;
 
     // Renvoie la valeur d'un paramètre de configuration
-    public static function get($nom, $valeurParDefaut = null) {
+    public static function get($nom, $valeurParDefaut = null) 
+    {
         if (isset(self::getParameter()[$nom])) {
             $valeur = self::getParameter()[$nom];
         }
@@ -17,7 +19,8 @@ class Config {
     }
 
     // Renvoie le tableau des paramètres en le chargeant au besoin
-    private static function getParameter() {
+    private static function getParameter() 
+    {
         if (self::$param == null) {
             $cheminFichier = "Config/prod.ini";
             if (!file_exists($cheminFichier)) {

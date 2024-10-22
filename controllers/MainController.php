@@ -3,7 +3,8 @@ namespace Controllers;
 
 use League\Plates\Engine;
 
-class MainController {
+class MainController 
+{
     private Engine $templates;
 
     public function __construct() {
