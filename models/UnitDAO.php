@@ -1,11 +1,12 @@
 <?php
+require_once 'Unit.php';
 require_once 'BasePDODAO.php';
 
 class UnitDAO extends BasePDODAO 
 {
     public function getAll()
     {
-        $request = "SELECT * FROM unit";
+        $request = "SELECT * FROM UNIT";
         $result = $this->execRequest($request);
         $units = [];
         foreach ($result as $row) 
@@ -27,11 +28,14 @@ class UnitDAO extends BasePDODAO
         $result = $this->execRequest($request, [':id' => $id]);
         $row = $result->fetch();
         $unit = new Unit();
-        $unit->set_id($row['id']);
-        $unit->set_name($row['name']);
-        $unit->set_cost($row['cost']);
-        $unit->set_origin($row['origin']);
-        $unit->set_url_img($row['url_img']);
+        if($row != null){
+            $unit->set_id($row['id']);
+            $unit->set_name($row['name']);
+            $unit->set_cost($row['cost']);
+            $unit->set_origin($row['origin']);
+            $unit->set_url_img($row['url_img']);
+        }
+        
         return $unit;
     }
 }

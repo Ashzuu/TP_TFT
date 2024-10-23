@@ -7,6 +7,9 @@ abstract class BasePDODAO
     private $pdo;
 
     protected function execRequest($sql, $params = null): PDOStatement|false {
+        $this->getDB();
+        
+        
         if($params == null)
         {
             $result = $this->pdo->query($sql);
@@ -23,7 +26,7 @@ abstract class BasePDODAO
     {
         if($this->pdo == null)
         {
-            $this->pdo = new PDO('mysql:host='.Config::get("dsn").';dbname='.Config::get("name"), Config::get("user"), Config::get("password"));
+            $this->pdo = new PDO('mysql:host='.Config::get("dsn").';dbname='.Config::get("name"), Config::get("user"), Config::get("pass"));
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
         return $this->pdo;

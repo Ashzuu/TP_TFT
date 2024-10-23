@@ -10,7 +10,7 @@ $autoLoader->register();
 $autoLoader->addNamespace('\Helpers', '/Helpers');
 $autoLoader->addNamespace("\League\Plates", "/Vendor/Plates/src");
 $autoLoader->addNamespace('Controllers', '/Controllers');
-
+$autoLoader->addNamespace("\Models","/Models");
 
 $controller = new MainController();
 $controller->index();
