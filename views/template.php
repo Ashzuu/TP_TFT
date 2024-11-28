@@ -13,7 +13,10 @@
     <!-- Menu -->
     <nav>
         <ul>
-
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="index.php?action=add-unit">Ajouter une unité</a></li>
+            <li><a href="index.php?action=add-origin">Ajouter une origine</a></li>
+            <li><a href="index.php?action=search">Rechercher une unité</a></li>
         </ul>
     </nav>
 </header>

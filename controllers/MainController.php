@@ -9,14 +9,15 @@ use UnitDAO;
 class MainController 
 {
     private Engine $templates;
+    private UnitDAO $dao;
 
-    public function __construct() {
-        $this->templates = new Engine('Views');
+    public function __construct($templates) {
+        $this->templates = $templates;
+        $this->dao = new UnitDAO();
     }
 
     public function index(): void {
-        $dao = new UnitDAO();
-        $allUnits = $dao->getAll();
+        $allUnits = $this->dao->getAll();
         echo $this->templates->render('home', ['tftSetName' => 'Remix Rumble','listUnit' => $allUnits]);
     }
 }
