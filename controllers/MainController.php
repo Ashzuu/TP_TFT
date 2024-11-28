@@ -1,7 +1,10 @@
 <?php
 namespace Controllers;
 
+require_once 'Models/UnitDAO.php';
+
 use League\Plates\Engine;
+use UnitDAO;
 
 class MainController 
 {

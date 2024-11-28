@@ -22,7 +22,7 @@ class Config
         if (self::$param == null) {
             $cheminFichier = "Config/config.ini";
             if (!file_exists($cheminFichier)) {
-                $cheminFichier = "Config/id.ini";
+                $cheminFichier = "Config/dev.ini";
             }
             if (!file_exists($cheminFichier)) {
                 throw new Exception("Aucun fichier de configuration trouvé");
