@@ -4,19 +4,10 @@ declare(strict_types=1);
 
 namespace Controllers\Router;
 
-use Controllers\MainController;
-use Controllers\UnitController;
-use Controllers\Router\Routes\RouteAddOrigin;
-use Controllers\Router\Routes\RouteAddUnit;
-use Controllers\Router\Routes\RouteDeleteUnit;
-use Controllers\Router\Routes\RouteEditUnit;
-use Controllers\Router\Routes\RouteIndex;
-use Controllers\Router\Routes\RouteSearch;
 use Exception;
 
 class Router
 {
-    // Attributs
     private $routes = [];  
     private $ctrlList = [];   
     private $actionKey;      
@@ -34,20 +25,20 @@ class Router
     private function createControllerList()
     {
         $this->ctrlList = [
-            'main' => new MainController($this->templates),
-            'unit' => new UnitController($this->templates),
+            'main' => new \Controllers\MainController($this->templates),
+            'unit' => new \Controllers\UnitController($this->templates),
         ];
     }
 
     private function createRouteList()
     {
         $this->routes = [
-            'index' => new RouteIndex($this->ctrlList['main']),
-            'add-unit' => new RouteAddUnit($this->ctrlList['unit']),
-            'search' => new RouteSearch($this->ctrlList['main']),
-            'add-origin' => new RouteAddOrigin($this->ctrlList['unit']),
-            'del-unit' => new RouteDeleteUnit($this->ctrlList['unit']),
-            'edit-unit' => new RouteEditUnit($this->ctrlList['unit']),
+            'index' => new \Controllers\Router\Routes\RouteIndex($this->ctrlList['main']),
+            'add-unit' => new \Controllers\Router\Routes\RouteAddUnit($this->ctrlList['unit']),
+            'search' => new \Controllers\Router\Routes\RouteSearch($this->ctrlList['main']),
+            'add-origin' => new \Controllers\Router\Routes\RouteAddOrigin($this->ctrlList['unit']),
+            'del-unit' => new \Controllers\Router\Routes\RouteDeleteUnit($this->ctrlList['unit']),
+            'edit-unit' => new \Controllers\Router\Routes\RouteEditUnit($this->ctrlList['unit'])
         ];
     }
 

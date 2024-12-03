@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Controllers\Router\Route;
+namespace Controllers\Router\Routes;
 
 use Controllers\Router\Route;
 

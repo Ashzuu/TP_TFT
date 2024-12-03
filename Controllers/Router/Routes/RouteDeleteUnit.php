@@ -1,6 +1,6 @@
 <?php
 
-namespace Controllers\Router\Route;
+namespace Controllers\Router\Routes;
 
 use Controllers\Router\Route;
 

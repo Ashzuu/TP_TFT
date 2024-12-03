@@ -13,5 +13,5 @@ $autoLoader->addNamespace('\Controllers\Router', __DIR__ . '/Controllers/Router'
 
 $templates = new \League\Plates\Engine(__DIR__.'/Views');
 
-$router = new \Controllers\Router\Router($templates);
+$router = new Controllers\Router\Router($templates);
 $router->routing($_GET,$_POST);
